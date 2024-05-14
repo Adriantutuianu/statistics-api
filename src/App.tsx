@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { getCountries } from "./apiService";
 import logo from "./logo.svg";
 import "./App.css";
 import Button from "./Button";
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const countriesData = await getCountries();
+        console.log(countriesData);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleClick = () => {
     console.log("Button clicked!");
   };
+
   return (
     <div className="App">
       <header className="App-header">
