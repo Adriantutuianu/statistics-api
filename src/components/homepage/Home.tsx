@@ -6,13 +6,15 @@ import { Country } from "../../types";
 
 const Home = () => {
   const [countries, setCountries] = useState<Country[]>([]);
-
+  const [count, setCount] = useState<Number>(1);
+  const [limit, setLimit] = useState<Number>(10);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const countriesData = await getCountries();
+        const countriesData = await getCountries(limit);
         console.log("DATA", countriesData);
         setCountries(countriesData.data);
+        setCount(countriesData.metadata.totalCount);
       } catch (error) {
         console.error("Error fetching countries:", error);
       }
