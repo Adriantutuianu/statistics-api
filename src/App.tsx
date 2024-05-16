@@ -3,6 +3,7 @@ import { getCountries } from "./apiService";
 import logo from "./logo.svg";
 import "./App.css";
 import Button from "./Button";
+import "./components/homepage/Home";
 
 function App() {
   useEffect(() => {
