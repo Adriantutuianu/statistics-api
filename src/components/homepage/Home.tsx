@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { getCountries } from "../../apiService";
-import Button from "../../Button";
 import { Link } from "react-router-dom";
 import "./home.css";
 
@@ -24,18 +23,8 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleClick = () => {
-    console.log("Button clicked!");
-  };
-
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <div className="flex justify-center items-center h-screen">
-          <Button onClick={handleClick} text="Click me" />
-        </div>
-      </header>
       <div>
         <h1>Home Page</h1>
         <ul>
