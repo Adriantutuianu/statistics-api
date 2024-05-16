@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 import { getCountries } from "../../apiService";
 import Button from "../../Button";
-
+import { Link } from "react-router-dom";
 import "./home.css";
+
+const countries = [
+  { id: 1, name: "USA" },
+  { id: 2, name: "UK" },
+  // Add more countries here
+];
 
 const Home = () => {
   useEffect(() => {
@@ -30,6 +36,16 @@ const Home = () => {
           <Button onClick={handleClick} text="Click me" />
         </div>
       </header>
+      <div>
+        <h1>Home Page</h1>
+        <ul>
+          {countries.map((country) => (
+            <li key={country.id}>
+              <Link to={`/country/${country.id}`}>{country.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
