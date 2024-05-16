@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/country/:id" element={<CountryDetails />} />
+          <Route path="/country/:countryCode" element={<CountryDetails />} />
           <Route path="*" element={<NotFoundRoute />} />
         </Routes>
         <Footer />

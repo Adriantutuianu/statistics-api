@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const CountryDetails: React.FC = () => {
-  const { id } = useParams();
+  const { countryCode } = useParams();
 
   // Fetch country details based on id
   // You can fetch from API or use some predefined data
@@ -11,7 +11,7 @@ const CountryDetails: React.FC = () => {
   return (
     <div>
       <h1>Country Details</h1>
-      <p>Country ID: {id}</p>
+      <p>Country ID: {countryCode}</p>
     </div>
   );
 };

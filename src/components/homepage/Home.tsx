@@ -28,8 +28,8 @@ const Home = () => {
         <h1>Home Page</h1>
         <ul>
           {countries.map((country: Country) => (
-            <li key={country.wikiDataId}>
-              <Link to={`/country/${country.wikiDataId}`}>{country.name}</Link>
+            <li key={country.code}>
+              <Link to={`/country/${country.code}`}>{country.name}</Link>
             </li>
           ))}
         </ul>
