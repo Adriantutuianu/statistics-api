@@ -5,6 +5,7 @@ import Homepage from "./components/homepage/Home";
 import CountryDetails from "./components/CountryDetails/CountryDetails";
 import NotFoundRoute from "./components/NotFoundRoute/NotFoundRoute";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/country/:id" element={<CountryDetails />} />
           <Route path="*" element={<NotFoundRoute />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
