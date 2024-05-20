@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getCountries } from "../../apiService";
 import { Link } from "react-router-dom";
-import "./home.css";
 import { Country } from "../../types";
 
 const Home = () => {
   const [countries, setCountries] = useState<Country[]>([]);
-  const [count, setCount] = useState<Number>(1);
-  const [limit, setLimit] = useState<Number>(10);
+  const [count, setCount] = useState<number>(0);
+  const [limit, setLimit] = useState<number>(10);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const countriesData = await getCountries(limit);
+        const offset = (currentPage - 1) * limit;
+        const countriesData = await getCountries(limit, offset);
         console.log("DATA", countriesData);
         setCountries(countriesData.data);
         setCount(countriesData.metadata.totalCount);
@@ -21,7 +23,22 @@ const Home = () => {
     };
 
     fetchData();
-  }, []);
+  }, [currentPage, limit]);
+
+  const totalPages = Math.ceil(count / limit);
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Home Page</h1>
@@ -48,6 +65,29 @@ const Home = () => {
           ))}
         </tbody>
       </table>
+      <div className="flex justify-between mt-4">
+        <button
+          onClick={handlePreviousPage}
+          className={`px-4 py-2 bg-gray-200 rounded ${
+            currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span className="px-4 py-2">
+          Page {currentPage} of {totalPages}
+        </span>
+        <button
+          onClick={handleNextPage}
+          className={`px-4 py-2 bg-gray-200 rounded ${
+            currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
