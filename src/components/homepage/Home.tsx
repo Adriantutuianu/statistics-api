@@ -23,17 +23,31 @@ const Home = () => {
     fetchData();
   }, []);
   return (
-    <div className="App">
-      <div>
-        <h1>Home Page</h1>
-        <ul>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Home Page</h1>
+      <table className="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr>
+            <th className="py-2 px-4 border-b">Country Code</th>
+            <th className="py-2 px-4 border-b">Country Name</th>
+          </tr>
+        </thead>
+        <tbody>
           {countries.map((country: Country) => (
-            <li key={country.code}>
-              <Link to={`/country/${country.code}`}>{country.name}</Link>
-            </li>
+            <tr key={country.code}>
+              <td className="py-2 px-4 border-b">{country.code}</td>
+              <td className="py-2 px-4 border-b">
+                <Link
+                  to={`/country/${country.code}`}
+                  className="text-blue-500 hover:underline"
+                >
+                  {country.name}
+                </Link>
+              </td>
+            </tr>
           ))}
-        </ul>
-      </div>
+        </tbody>
+      </table>
     </div>
   );
 };
