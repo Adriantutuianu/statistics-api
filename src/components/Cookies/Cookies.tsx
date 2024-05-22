@@ -29,7 +29,7 @@ export default function Cookies() {
           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
-        <div className="fixed bottom-4 right-4 z-10">
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}
@@ -54,12 +54,12 @@ export default function Cookies() {
                         as="h3"
                         className="text-base font-semibold leading-6 text-gray-900"
                       >
-                        Cookies notification!{" "}
+                        Welcome!
                       </Dialog.Title>
                       <div className="mt-2">
                         <p className="text-sm text-gray-500">
-                          We use cookies to improve your experience on our site.
-                          By using our site, you agree to our use of cookies.
+                          Here you can find useful informations regarding
+                          countries all around the world!
                         </p>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ export default function Cookies() {
                     className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                     onClick={() => setOpen(false)}
                   >
-                    Accept
+                    Have fun!
                   </button>
                   <button
                     type="button"
