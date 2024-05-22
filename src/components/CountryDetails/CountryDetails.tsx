@@ -20,7 +20,6 @@ const CountryDetails: React.FC = () => {
         console.error("Error fetching countries:", error);
       }
     };
-
     fetchData();
   }, [countryCode]);
   console.log("Country: ", country);
@@ -29,6 +28,7 @@ const CountryDetails: React.FC = () => {
       <h1>Country Details</h1>
       <p>Country ID: {countryCode}</p>
       <p>Country Capital: {country?.capital}</p>
+      <p>Country Currency codes: {country?.currencyCodes.join(", ")}</p>
     </div>
   );
 };
