@@ -1,13 +1,25 @@
-import "./countryDetails.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getCountry } from "../../apiService";
+import "./countryDetails.css";
 
 const CountryDetails: React.FC = () => {
-  const { countryCode } = useParams();
+  let { countryCode } = useParams();
 
-  // Fetch country details based on id
-  // You can fetch from API or use some predefined data
-  // For simplicity, I'll just display the id here
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // @ts-ignore
+        const countryDetails = await getCountry(countryCode);
+        console.log(countryDetails);
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchData();
+  }, [countryCode]);
+
   return (
     <div>
       <h1>Country Details</h1>
