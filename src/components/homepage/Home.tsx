@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCountries } from "../../apiService";
 import { Link } from "react-router-dom";
 import { Country } from "../../types";
+import Cookies from "../Cookies/Cookies";
 
 const Home = () => {
   const [countries, setCountries] = useState<Country[]>([]);
@@ -41,6 +42,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <Cookies />
       <h1 className="text-2xl font-bold mb-4">Home Page</h1>
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
