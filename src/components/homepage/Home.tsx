@@ -43,8 +43,7 @@ const Home = () => {
   return (
     <div className="container mx-auto p-4">
       <Cookies />
-      <h1 className="text-2xl font-bold mb-4">Home Page</h1>
-      <table className="min-w-full bg-white border border-gray-300">
+      <table className="min-w-full bg-white border border-gray-300 mt-5">
         <thead>
           <tr>
             <th className="py-2 px-4 border-b">Country Code</th>
