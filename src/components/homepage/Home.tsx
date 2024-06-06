@@ -41,13 +41,14 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-6">
       <Cookies />
+      <h2>*Click on country to get more details</h2>
       <table className="min-w-full bg-white border border-gray-300 mt-5">
         <thead>
           <tr>
-            <th className="py-2 px-4 border-b">Country Code</th>
-            <th className="py-2 px-4 border-b">Country Name</th>
+            <th className="py-2 px-4 border-b text-left">Country Code</th>
+            <th className="py-2 px-4 border-b text-left">Country Name</th>
           </tr>
         </thead>
         <tbody>
