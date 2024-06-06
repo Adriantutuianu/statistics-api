@@ -24,11 +24,29 @@ const CountryDetails: React.FC = () => {
   }, [countryCode]);
   console.log("Country: ", country);
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <h1>Country Details</h1>
-      <p>Country ID: {countryCode}</p>
-      <p>Country Capital: {country?.capital}</p>
-      <p>Country Currency codes: {country?.currencyCodes.join(", ")}</p>
+
+      <table className="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr>
+            <th className="py-2 px-4 border-b">Country Code</th>
+            <th className="py-2 px-4 border-b">Country Name</th>
+            <th className="py-2 px-4 border-b">Country Capital</th>
+            <th className="py-2 px-4 border-b">Country Currency Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="py-2 px-4 border-b">{countryCode}</td>
+            <td className="py-2 px-4 border-b">{country?.name}</td>
+            <td className="py-2 px-4 border-b">{country?.capital}</td>
+            <td className="py-2 px-4 border-b">
+              {country?.currencyCodes.join(", ")}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
