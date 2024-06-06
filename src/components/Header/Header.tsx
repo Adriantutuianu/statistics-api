@@ -3,9 +3,12 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1 className="text-4xl font-bold underline">Hello world!</h1>
-      <div className="flex justify-center items-center h-screen"></div>
+    // <header className="header flex justify-center items-center h-28">
+    //   <h1 className="text-5xl font-bold text-center">World Statistics</h1>
+    // </header>
+    <header className="header flex justify-center items-center h-28 relative bg-gray-100">
+      <h1 className="text-5xl font-bold text-center">World Statistics</h1>
+      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-500 opacity-75"></div>
     </header>
   );
 };
