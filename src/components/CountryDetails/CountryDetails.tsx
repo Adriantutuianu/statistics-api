@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getCountry } from "../../apiService";
 import "./countryDetails.css";
 import { FullCountry } from "../../types";
 
 const CountryDetails: React.FC = () => {
   let { countryCode } = useParams();
+
+  const navigate = useNavigate();
 
   const [country, setCountry] = useState<FullCountry>();
 
@@ -23,6 +25,11 @@ const CountryDetails: React.FC = () => {
     fetchData();
   }, [countryCode]);
   console.log("Country: ", country);
+
+  const handleGoHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="container mx-auto p-4 flex justify-center">
       <div className="w-full max-w-2xl">
@@ -89,6 +96,12 @@ const CountryDetails: React.FC = () => {
           </tbody>
         </table>
       </div>
+      <button
+        onClick={handleGoHome}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+      >
+        Go to Country Full List
+      </button>
     </div>
   );
 };
