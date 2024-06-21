@@ -31,9 +31,9 @@ const CountryDetails: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 flex justify-center">
-      <div className="w-full max-w-2xl">
-        <h1 className="text-center mb-4 text-xl font-bold">Country Details</h1>
+    <div className="container mx-auto p-4 flex justify-center items-center ">
+      <div className="w-full max-w-4xl bg-white shadow-md rounded px-8 pt-8 pb-8 mb-4">
+        <h1 className="text-center text-3xl font-bold mb-4">Country Details</h1>
         <table className="w-full bg-white border border-gray-300">
           <tbody>
             <tr>
@@ -94,10 +94,10 @@ const CountryDetails: React.FC = () => {
             </tr>
           </tbody>
         </table>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-8">
           <button
             onClick={handleGoHome}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded"
           >
             Go to Country Full List
           </button>
