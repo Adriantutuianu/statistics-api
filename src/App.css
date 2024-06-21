@@ -1,0 +1,17 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enables scrolling if content exceeds viewport */
+}
