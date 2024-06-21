@@ -29,7 +29,6 @@ const CountryDetails: React.FC = () => {
   const handleGoHome = () => {
     navigate("/");
   };
-
   return (
     <div className="container mx-auto p-4 flex justify-center">
       <div className="w-full max-w-2xl">
@@ -95,13 +94,15 @@ const CountryDetails: React.FC = () => {
             </tr>
           </tbody>
         </table>
+        <div className="flex justify-center mt-4">
+          <button
+            onClick={handleGoHome}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
+          >
+            Go to Country Full List
+          </button>
+        </div>
       </div>
-      <button
-        onClick={handleGoHome}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded"
-      >
-        Go to Country Full List
-      </button>
     </div>
   );
 };
