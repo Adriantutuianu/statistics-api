@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCountries } from "../../apiService";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Country } from "../../types";
 import Cookies from "../Cookies/Cookies";
 
@@ -9,6 +9,10 @@ const Home = () => {
   const [count, setCount] = useState<number>(0);
   const [limit, setLimit] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [showCookies, setShowCookies] = useState<boolean>(true);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +30,12 @@ const Home = () => {
     fetchData();
   }, [currentPage, limit]);
 
+  useEffect(() => {
+    if (location.state && location.state.fromBackButton) {
+      setShowCookies(false);
+    }
+  }, [location.state]);
+
   const totalPages = Math.ceil(count / limit);
 
   const handlePreviousPage = () => {
@@ -40,9 +50,13 @@ const Home = () => {
     }
   };
 
+  const handleCountryClick = (countryCode: string) => {
+    navigate(`/country/${countryCode}`, { state: { fromBackButton: true } });
+  };
+
   return (
     <div className="container mx-auto p-6">
-      <Cookies />
+      {showCookies && <Cookies />}
       <h2>*Click on country to get more details</h2>
       <table className="min-w-full bg-white border border-gray-300 mt-5">
         <thead>
@@ -56,12 +70,12 @@ const Home = () => {
             <tr key={country.code}>
               <td className="py-2 px-4 border-b">{country.code}</td>
               <td className="py-2 px-4 border-b">
-                <Link
-                  to={`/country/${country.code}`}
+                <button
+                  onClick={() => handleCountryClick(country.code)}
                   className="text-blue-500 hover:underline"
                 >
                   {country.name}
-                </Link>
+                </button>
               </td>
             </tr>
           ))}

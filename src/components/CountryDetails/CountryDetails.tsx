@@ -5,7 +5,7 @@ import "./countryDetails.css";
 import { FullCountry } from "../../types";
 
 const CountryDetails: React.FC = () => {
-  let { countryCode } = useParams();
+  let { countryCode } = useParams<{ countryCode: string }>();
 
   const navigate = useNavigate();
 
@@ -13,27 +13,27 @@ const CountryDetails: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        // @ts-ignore
-        const countryDetails = await getCountry(countryCode);
-        console.log(countryDetails);
-        setCountry(countryDetails.data);
-      } catch (error) {
-        console.error("Error fetching countries:", error);
+      if (countryCode) {
+        try {
+          const countryDetails = await getCountry(countryCode);
+          console.log(countryDetails);
+          setCountry(countryDetails.data);
+        } catch (error) {
+          console.error("Error fetching country:", error);
+        }
       }
     };
     fetchData();
   }, [countryCode]);
-  console.log("Country: ", country);
 
   const handleGoHome = () => {
-    navigate("/");
+    navigate("/", { state: { fromBackButton: true } });
   };
+
   return (
     <div className="container mx-auto p-4 flex justify-center">
       <div className="w-full max-w-2xl">
         <h1 className="text-center mb-4 text-xl font-bold">Country Details</h1>
-
         <table className="w-full bg-white border border-gray-300">
           <tbody>
             <tr>
