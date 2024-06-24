@@ -5,7 +5,7 @@ import Homepage from "./components/homepage/Home";
 import CountryDetails from "./components/country-details/CountryDetails";
 import NotFoundRoute from "./components/not-found-route/NotFoundRoute";
 import Header from "./components/Header/Header";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
