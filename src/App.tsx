@@ -4,7 +4,6 @@ import "./App.css";
 import Homepage from "./components/homepage/Home";
 import CountryDetails from "./components/country-details/CountryDetails";
 import NotFoundRoute from "./components/not-found-route/NotFoundRoute";
-import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 
 function App() {
@@ -19,7 +18,7 @@ function App() {
             <Route path="*" element={<NotFoundRoute />} />
           </Routes>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );
