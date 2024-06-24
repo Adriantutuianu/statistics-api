@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCountries } from "../../apiService";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Country } from "../../types";
-import Cookies from "../Cookies/Cookies";
+import Cookies from "../cookies/Cookies";
 
 const Home = () => {
   const [countries, setCountries] = useState<Country[]>([]);
