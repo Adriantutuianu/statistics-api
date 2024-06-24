@@ -7,7 +7,7 @@ import Cookies from "../Cookies/Cookies";
 const Home = () => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [count, setCount] = useState<number>(0);
-  const [limit, setLimit] = useState<number>(10);
+  const [limit] = useState<number>(10);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [showCookies, setShowCookies] = useState<boolean>(true);
 
