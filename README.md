@@ -7,14 +7,20 @@ Our interactive platform provides up-to-date insights and visualizations, allowi
 
 ## Screenshots
 
+### ![World statistics 1](/public/Screenshot1.jpg)
+
+### ![World statistics 2](/public/Screenshot2.jpg)
+
+### ![World statistics 3](/public/Screenshot3.jpg)
+
 ## Technologies Used
 
-- HTML
-- CSS
-- Tailwind
+- HTML5
+- CSS3
 - TypeScript
+- [Tailwind](https://tailwindcss.com/)
 - [React](https://reactjs.org/)
-- [Rapid API](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/)
+- [Rapid API](https://rapidapi.com/)
 - Deployment in [Netlify](https://www.netlify.com/)
 
 ## Features
@@ -33,7 +39,7 @@ To run this project locally, follow these steps:
 
 ## Deployment
 
-The application is deployed on Netlify. You can access it [here](https://eventbright.netlify.app/).
+The application is deployed on Netlify. You can access it [here](https://statistics-api.netlify.app/).
 
 ## Application Repository
 
