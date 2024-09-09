@@ -64,13 +64,13 @@ const Home = () => {
           className="w-3/4 mx-auto border text-center border-gray-300"
         >
           <TableHeader>
-            <TableColumn className=" text-xl w-1/4 border-b border-gray-300">
+            <TableColumn className="text-xl w-1/4 border-b border-gray-300">
               Country Code
             </TableColumn>
-            <TableColumn className=" text-xl w-1/4 border-b border-gray-300">
+            <TableColumn className="text-xl w-1/4 border-b border-gray-300">
               Wikidata ID
             </TableColumn>
-            <TableColumn className=" text-xl w-2/4 border-b border-gray-300">
+            <TableColumn className="text-xl w-2/4 border-b border-gray-300">
               Country Name
             </TableColumn>
           </TableHeader>
@@ -84,9 +84,10 @@ const Home = () => {
               >
                 <TableCell className="text-lg">{country.code}</TableCell>
                 <TableCell className="text-lg">{country.wikiDataId}</TableCell>
-                <TableCell className="text-lg ">
+                <TableCell className="text-lg">
                   <Button
                     color="primary"
+                    className="bg-transparent text-blue-500  hover:text-yellow-500"
                     onClick={() => handleCountryClick(country.code)}
                   >
                     {country.name}
