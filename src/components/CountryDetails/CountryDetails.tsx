@@ -72,7 +72,7 @@ const CountryDetails: React.FC = () => {
               </TableCell>
               <TableCell className="p-2 text-lg">{country?.capital}</TableCell>
             </TableRow>
-            <TableRow className="border-b border-gray-300">
+            <TableRow>
               <TableCell className="border-r border-gray-300 p-2 text-lg">
                 Country Currency Code
               </TableCell>
