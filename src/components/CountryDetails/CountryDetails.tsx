@@ -39,8 +39,8 @@ const CountryDetails: React.FC = () => {
 
   return (
     <div className="container mx-auto mt-[100px] p-4 flex justify-center items-center">
-      <div className="w-full md:w-3/4 lg:w-2/3 bg-white shadow-md rounded px-4 md:px-8 pt-8 pb-8 mb-4">
-        <h1 className="text-center text-3xl font-bold mb-6">Country Details</h1>
+      <div className="w-full md:w-3/4 lg:w-2/3 bg-white shadow-md rounded px-4 md:px-8 pt-8 pb-8 mb-4 border-t border-gray-300">
+        <h1 className="text-center text-3xl font-bold mb-8">Country Details</h1>
         <Table
           aria-label="Country Details"
           className="w-full border border-gray-300"
